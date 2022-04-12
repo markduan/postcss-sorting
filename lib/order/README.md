@@ -12,7 +12,7 @@ Within an order array, you can include:
 	- `at-variables` — At-variables (e. g., `@variable`)
 	- `declarations` — CSS declarations (e. g., `display: block`)
 	- `rules` — Nested rules (e. g., `span {}` in `a { span {} }`)
-	- `at-rules` — Nested at-rules (e. g., `@media () {}` in `div { @media () {} }`)
+	- `atrule` — Nested atrule (e. g., `@media () {}` in `div { @media () {} }`)
 - extended at-rule objects:
 
 	```js
@@ -48,7 +48,7 @@ Object parameters:
 
 Always specify `name` if `parameter` is specified.
 
-Matches all at-rules:
+Matches all atrule:
 
 ```js
 {
@@ -56,9 +56,9 @@ Matches all at-rules:
 }
 ```
 
-Or keyword `at-rules`.
+Or keyword `atrule`.
 
-Matches all at-rules, which have nested elements:
+Matches all atrule, which have nested elements:
 
 ```js
 {
@@ -67,7 +67,7 @@ Matches all at-rules, which have nested elements:
 }
 ```
 
-Matches all at-rules with specific name:
+Matches all atrule with specific name:
 
 ```js
 {
@@ -76,7 +76,7 @@ Matches all at-rules with specific name:
 }
 ```
 
-Matches all at-rules with specific name, which have nested elements:
+Matches all atrule with specific name, which have nested elements:
 
 ```js
 {
@@ -86,7 +86,7 @@ Matches all at-rules with specific name, which have nested elements:
 }
 ```
 
-Matches all at-rules with specific name and parameter:
+Matches all atrule with specific name and parameter:
 
 ```js
 {
@@ -96,7 +96,7 @@ Matches all at-rules with specific name and parameter:
 }
 ```
 
-Matches all at-rules with specific name and parameter, which have nested elements:
+Matches all atrule with specific name and parameter, which have nested elements:
 
 ```js
 {
@@ -151,7 +151,7 @@ If more than one pattern can be applied to a node, and these patterns have equal
 Given:
 
 ```js
-["custom-properties", "dollar-variables", "declarations", "rules", "at-rules"]
+["custom-properties", "dollar-variables", "declarations", "rules", "atrule"]
 ```
 
 Before:

@@ -30,7 +30,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 4.0.0
 * Breaking change: Dropped Node.js 4 support. Node.js 6.14.3 is the minimum supported version.
-* Could be a breaking change: Plugin won't sort inside some at-rule (mostly Sass specific directives). Read more about [ignored at-rules](https://github.com/hudochenkov/postcss-sorting#ignored-at-rules).
+* Could be a breaking change: Plugin won't sort inside some at-rule (mostly Sass specific directives). Read more about [ignored atrule](https://github.com/hudochenkov/postcss-sorting#ignored-atrule).
 * Added: `at-variables` keyword for `order`.
 
 ## 3.1.0
@@ -74,7 +74,7 @@ This release completely incompatible with the previous API. There is a lot new o
 ### Added
 * `sort-order` split into `order` and `properties-order`.
 * Alphabetical order.
-* At-rules can be checked if they have a block. E.g., `@include icon;` has no block.
+* atrule can be checked if they have a block. E.g., `@include icon;` has no block.
 * Custom properties and $-variables can be grouped separately.
 * Empty lines for different node types:
 	* `rule-nested-empty-line-before`

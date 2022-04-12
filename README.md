@@ -2,16 +2,16 @@
 
 [![npm version][npm-version-img]][npm] [![npm downloads last month][npm-downloads-img]][npm]
 
-[PostCSS] plugin to keep rules and at-rules content in order.
+[PostCSS] plugin to keep rules and atrule content in order.
 
 Lint and autofix stylesheet order with [stylelint-order].
 
 ## Features
 
-* Sorts rules and at-rules content.
+* Sorts rules and atrule content.
 * Sorts properties.
-* Sorts at-rules by different options.
-* Groups properties, custom properties, dollar variables, nested rules, nested at-rules.
+* Sorts atrule by different options.
+* Groups properties, custom properties, dollar variables, nested rules, nested atrule.
 * Supports CSS, SCSS (using [postcss-scss]), CSS-in-JS (with [@stylelint/postcss-css-in-js]), HTML (with [postcss-html]), and most likely any other syntax added by other PostCSS plugins.
 
 ## Installation
@@ -44,9 +44,9 @@ a {
 }
 ```
 
-### Ignored at-rules
+### Ignored atrule
 
-Some at-rules, like [control](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives__expressions) and [function](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#function_directives) directives in Sass, are ignored. It means rules won't touch content inside these at-rules, as doing so could change or break functionality.
+Some atrule, like [control](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#control_directives__expressions) and [function](https://sass-lang.com/documentation/file.SASS_REFERENCE.html#function_directives) directives in Sass, are ignored. It means rules won't touch content inside these atrule, as doing so could change or break functionality.
 
 ### CSS-in-JS
 
@@ -93,7 +93,7 @@ module.exports = {
 				'custom-properties',
 				'dollar-variables',
 				'declarations',
-				'at-rules',
+				'atrule',
 				'rules',
 			],
 
