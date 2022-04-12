@@ -30,7 +30,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 4.0.0
 * Breaking change: Dropped Node.js 4 support. Node.js 6.14.3 is the minimum supported version.
-* Could be a breaking change: Plugin won't sort inside some at-rule (mostly Sass specific directives). Read more about [ignored atrule](https://github.com/hudochenkov/postcss-sorting#ignored-atrule).
+* Could be a breaking change: Plugin won't sort inside some atrule (mostly Sass specific directives). Read more about [ignored atrule](https://github.com/hudochenkov/postcss-sorting#ignored-atrule).
 * Added: `at-variables` keyword for `order`.
 
 ## 3.1.0
@@ -46,7 +46,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 This is a cleanup release. Removed everything not related to ordering stylesheets. I recommend to use combination [stylelint 7.11+](https://stylelint.io/) with `--fix` option and [stylelint-order 0.5+](https://github.com/hudochenkov/stylelint-order) plugin instead of this plugin. Using combination above you'll receive linting and autofixing using only one tool!
 
 * Removed options:
-	* `at-rule-nested-empty-line-before`
+	* `atrule-nested-empty-line-before`
 	* `clean-empty-lines`
 	* `comment-empty-line-before`
 	* `custom-property-empty-line-before`
@@ -61,7 +61,7 @@ This is a cleanup release. Removed everything not related to ordering stylesheet
 ## 2.1.0
 * Added: `order` supports new `rule` extended object, which has new `selector` option. Rules in `order` can be specified by their selector.
 * Fixed: Inconsistency with shared line comments.
-* Fixed: Incorrect behaviour if `hasBlock` was set to `false` in extended at-rule object in `order`.
+* Fixed: Incorrect behaviour if `hasBlock` was set to `false` in extended atrule object in `order`.
 
 ## 2.0.1
 * Accept `null` for all options.
@@ -78,7 +78,7 @@ This release completely incompatible with the previous API. There is a lot new o
 * Custom properties and $-variables can be grouped separately.
 * Empty lines for different node types:
 	* `rule-nested-empty-line-before`
-	* `at-rule-nested-empty-line-before`
+	* `atrule-nested-empty-line-before`
 	* `declaration-empty-line-before`
 	* `custom-property-empty-line-before`
 	* `dollar-variable-empty-line-before`
@@ -110,7 +110,7 @@ This release completely incompatible with the previous API. There is a lot new o
 * Add special comments to disable processing for some part in stylesheet
 * Support custom properties as $variable #27
 * Fix an issue when there is a lot of comments in the end of a rule #24
-* At-rule parameter now supports parentheses. For example, `@include mwp(1)`. (thanks, @Redknife) #29
+* atrule parameter now supports parentheses. For example, `@include mwp(1)`. (thanks, @Redknife) #29
 
 ## 1.5.0
 * Add `empty-lines-before-comment` and `empty-lines-after-comment`, which add empty lines before and after a comment or a group of comments.

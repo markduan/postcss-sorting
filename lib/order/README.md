@@ -2,7 +2,7 @@
 
 Specify the order of content within declaration blocks.
 
-`array`: `["array", "of", "keywords", "or", "expanded", "at-rule", "or", "rule" "objects"]`
+`array`: `["array", "of", "keywords", "or", "expanded", "atrule", "or", "rule" "objects"]`
 
 Within an order array, you can include:
 
@@ -13,11 +13,11 @@ Within an order array, you can include:
 	- `declarations` — CSS declarations (e. g., `display: block`)
 	- `rules` — Nested rules (e. g., `span {}` in `a { span {} }`)
 	- `atrule` — Nested atrule (e. g., `@media () {}` in `div { @media () {} }`)
-- extended at-rule objects:
+- extended atrule objects:
 
 	```js
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 		parameter: 'hello',
 		hasBlock: true
@@ -35,13 +35,13 @@ Within an order array, you can include:
 
 **Unlisted elements will be placed after all listed elements.** So if you specify an array and do not include `declarations`, that means that all declarations will be placed after any other element.
 
-## Extended at-rule objects
+## Extended atrule objects
 
-Extended at-rule objects have different parameters and variations.
+Extended atrule objects have different parameters and variations.
 
 Object parameters:
 
-* `type`: always `"at-rule"`
+* `type`: always `"atrule"`
 * `name`: `string`. E. g., `name: "include"` for `@include`
 * `parameter`: `string`|`regex`. A string will be translated into a RegExp — `new RegExp(yourString)` — so _be sure to escape properly_. E. g., `parameter: "icon"` for `@include icon(20px);`
 * `hasBlock`: `boolean`. E. g., `hasBlock: true` for `@include icon { color: red; }` and not for `@include icon;`
@@ -52,7 +52,7 @@ Matches all atrule:
 
 ```js
 {
-	type: 'at-rule'
+	type: 'atrule'
 }
 ```
 
@@ -62,7 +62,7 @@ Matches all atrule, which have nested elements:
 
 ```js
 {
-	type: 'at-rule',
+	type: 'atrule',
 	hasBlock: true
 }
 ```
@@ -71,7 +71,7 @@ Matches all atrule with specific name:
 
 ```js
 {
-	type: 'at-rule',
+	type: 'atrule',
 	name: 'media'
 }
 ```
@@ -80,7 +80,7 @@ Matches all atrule with specific name, which have nested elements:
 
 ```js
 {
-	type: 'at-rule',
+	type: 'atrule',
 	name: 'media',
 	hasBlock: true
 }
@@ -90,7 +90,7 @@ Matches all atrule with specific name and parameter:
 
 ```js
 {
-	type: 'at-rule',
+	type: 'atrule',
 	name: 'include',
 	parameter: 'icon'
 }
@@ -100,14 +100,14 @@ Matches all atrule with specific name and parameter, which have nested elements:
 
 ```js
 {
-	type: 'at-rule',
+	type: 'atrule',
 	name: 'include',
 	parameter: 'icon',
 	hasBlock: true
 }
 ```
 
-Each described above variant has more priority than its previous variant. For example, `{ type: 'at-rule', name: 'media' }` will be applied to an element if both `{ type: 'at-rule', name: 'media' }` and `{ type: 'at-rule', hasBlock: true }` can be applied to an element.
+Each described above variant has more priority than its previous variant. For example, `{ type: 'atrule', name: 'media' }` will be applied to an element if both `{ type: 'atrule', name: 'media' }` and `{ type: 'atrule', hasBlock: true }` can be applied to an element.
 
 ## Extended rule objects
 
@@ -203,20 +203,20 @@ Given:
 ```js
 [
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 	},
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 		hasBlock: true
 	},
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		hasBlock: true
 	},
 	{
-		type: 'at-rule',
+		type: 'atrule',
 	}
 ]
 ```
@@ -286,18 +286,18 @@ Given:
 ```js
 [
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 		hasBlock: true
 	},
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 		parameter: 'icon',
 		hasBlock: true
 	},
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		name: 'include',
 		parameter: 'icon'
 	}
@@ -480,7 +480,7 @@ Given:
 [
 	'custom-properties',
 	{
-		type: 'at-rule',
+		type: 'atrule',
 		hasBlock: true,
 	},
 	'declarations'
